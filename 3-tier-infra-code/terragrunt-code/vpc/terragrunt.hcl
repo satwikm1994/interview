@@ -1,6 +1,6 @@
 
 terraform {
-  source = ""
+  source = "git::https://github.com/satwikm1994/interview.git/3-tier-infra-code/terraform-code/vpc"
 }
 
 include {
@@ -8,6 +8,6 @@ include {
 }
 
 inputs = {
-  vpc_cidr              = "10.70.192.0/18"
-  secondary_cidr_blocks = ["10.134.0.0/16", "10.232.3.0/24"]
+  vpc_cidr              = "10.71.192.0/18"
+  secondary_cidr_blocks = ["10.135.0.0/16", "10.233.3.0/24"]
 }

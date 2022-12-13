@@ -1,5 +1,5 @@
 terraform {
-  source = ""
+  source = "git::https://github.com/satwikm1994/interview.git/3-tier-infra-code/terraform-code/db_subnet_group"
 }
 
 inputs = {

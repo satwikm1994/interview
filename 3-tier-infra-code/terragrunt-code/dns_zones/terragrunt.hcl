@@ -1,7 +1,7 @@
 # Terragrunt will copy the Terraform configurations specified by the source parameter, along with any files in the
 # working directory, into a temporary folder, and execute your Terraform commands in that folder.
 terraform {
-  source = ""
+  source = "git::https://github.com/satwikm1994/interview.git/3-tier-infra-code/terraform-code/route53"
 }
 
 # These are the variables we have to pass in to use the module specified in the terragrunt configuration above
