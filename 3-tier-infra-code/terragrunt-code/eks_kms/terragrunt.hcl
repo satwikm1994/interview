@@ -7,7 +7,7 @@ terraform {
 # These are the variables we have to pass in to use the module specified in the terragrunt configuration above
 # KMS variables
 inputs = {
-  alias_name              = "alias/musca-cluster-key-ring"
+  alias_name              = "alias/interview-cluster-key-ring"
   deletion_window_in_days = "7" #..> days
   description             = "KMS key for eks cluster"
   enable_key_rotation     = true

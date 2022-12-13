@@ -1,9 +1,5 @@
-terraform {
-  backend "gcs" {}
-}
-
 #below are custom kubectl image configurations.
-data "aws_ami" "idfy-bastion-image" {
+data "aws_ami" "interview-bastion-image" {
   most_recent = true
 
   filter {
@@ -46,7 +42,7 @@ data "aws_iam_instance_profile" "bastion_role" {
 }
 
 resource "aws_instance" "bastion" {
-  ami                         = data.aws_ami.idfy-bastion-image.id
+  ami                         = data.aws_ami.interview-bastion-image.id
   subnet_id                   = data.aws_subnet.subnet.id
   vpc_security_group_ids      = data.aws_security_groups.selected.ids
   instance_type               = var.instance_type

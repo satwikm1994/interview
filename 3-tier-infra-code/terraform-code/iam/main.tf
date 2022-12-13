@@ -1,39 +1,3 @@
-terraform {
-   backend "gcs" {}
-}
-##----------> Janus S3 Custom policy <-----------##
-
-resource "aws_iam_policy" "policy" {
-  count       = var.s3create ? 1 : 0
-  name        = var.s3_policy_name
-  path        = "/"
-  description = "s3 create and delete policy"
-
-  # Terraform's "jsonencode" function converts a
-  # Terraform expression result to valid JSON syntax.
-  policy = jsonencode({
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Sid": "VisualEditor0",
-            "Effect": "Allow",
-            "Action": [
-                "s3:PutObject",
-                "s3:DeleteObject"
-            ],
-            "Resource": "*"
-        },
-    ]
-  })
-}
-
-resource "aws_iam_role_policy_attachment" "janus-s3-attach" {
-  count       = var.s3create ? 1 : 0
-  role       = var.instance_profile_role
-  policy_arn = aws_iam_policy.policy[0].arn
-  depends_on = [aws_iam_role.iam_role]
-  }
-
 ##-----------> instance profile roles <---------------##
 
 data "aws_iam_policy_document" "instance_assume_role_policy" {

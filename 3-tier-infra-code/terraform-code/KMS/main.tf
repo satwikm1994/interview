@@ -1,7 +1,3 @@
-terraform {
-  backend "gcs" {}
-}
-
 resource "aws_kms_key" "kms_key" {
   description              = var.description
   key_usage                = "ENCRYPT_DECRYPT"

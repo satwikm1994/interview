@@ -1,9 +1,3 @@
-# Include all settings from the root terragrunt.hcl file
-# include {
-#   path = find_in_parent_folders()
-# }
-# Terragrunt will copy the Terraform configurations specified by the source parameter, along with any files in the
-# working directory, into a temporary folder, and execute your Terraform commands in that folder.
 terraform {
   source = "git::https://gitlab.idfy.com/code/infra/terraform-modules-aws.git//RDS?ref=master_v2"
   #source = "E:/terraform/terraform-modules-aws/RDS"
@@ -14,12 +8,12 @@ terraform {
 locals {
   myvars        = read_terragrunt_config(find_in_parent_folders("terragrunt.hcl"))
   universe_name = local.myvars.locals.universe_name
-  db_name       = "hw-platform"
-  db_context    = "hwplatform"
+  db_name       = "interview-db"
+  db_context    = "interview"
 }
 
 inputs = {
-  kms_name                            = "alias/musca-db-key"
+  kms_name                            = "alias/interview-db-key"
   rds_instance_role_name              = "${local.universe_name}_RDS_profile_role"
   db_instance_name                    = "${local.universe_name}-${local.db_context}-db"
   engine_version                      = "11.12"
@@ -31,7 +25,7 @@ inputs = {
   security_group_name                 = ["${local.universe_name}-rds-ingress"]
   db_subnet_group_name                = "${local.universe_name}-db-subnet-group"
   multi_az                            = false
-  availability_zone                   = "ap-southeast-3b"
+  availability_zone                   = "ap-south-1"
   secret_name                         = "${local.universe_name}-${local.db_name}-db-url"
 }
 

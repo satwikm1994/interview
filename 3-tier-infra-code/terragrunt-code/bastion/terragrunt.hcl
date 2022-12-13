@@ -11,15 +11,15 @@ locals {
 }
 
 inputs = {
-  bastion_image_name   = ["idfy-norma-musca-bastion-image-1"]
+  bastion_image_name   = ["bastion-image-1"]
   virtualization_type  = ["hvm"] #..> hvm or pv | doesn't hvm doesn't need any modification
-  owner_id             = ["094550720335"]
-  subnet_name          = "musca_nodes_01" #..> musca nodes subnet
-  security_group_name  = ["musca-ssh"]
+  owner_id             = [""]
+  subnet_name          = "interview_nodes_01" #..> nodes subnet
+  security_group_name  = ["interview-ssh"]
   instance_type        = "t3.nano" #..> 1 CPU | 6vCPU | 1GB Mem |
-  bastion_profile_name = "norma_bastion_instance_profile"
+  bastion_profile_name = "interview_bastion_instance_profile"
   assign_public_id     = false
-  availability_zone    = "ap-southeast-3a"
+  availability_zone    = "ap-south-1"
   instance_name        = "${local.universe_name}_bastion"
   volume_size          = 8
   volume_type          = "gp3"

@@ -16,11 +16,11 @@ locals {
 # GKE variables
 inputs = {
   cluster_name             = "${local.universe_name}-cluster"
-  kms_name                 = "alias/musca-cluster-key-ring"
+  kms_name                 = "alias/interview-cluster-key-ring"
   enable_vpc_cni_addon     = false
   cluster_egress_cidrs     = ["0.0.0.0/0"]
-  eks_node_group_role_name = "norma_eks_node_group_profile_roles"
-  eks_cluster_role_name    = "norma_eks_cluster_profile_roles"
+  eks_node_group_role_name = "interview_eks_node_group_profile_roles"
+  eks_cluster_role_name    = "interview_eks_cluster_profile_roles"
   services_cidr            = "10.232.1.0/24"
   public_access_cidrs = [
     "35.200.180.154/32", // Gitlab NAT

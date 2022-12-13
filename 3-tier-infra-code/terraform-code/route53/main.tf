@@ -1,7 +1,3 @@
-terraform {
-  backend "gcs" {}
-}
-
 locals {
   # terragrunt users have to provide `records` as jsonencode()'d string.
   # See details: https://github.com/gruntwork-io/terragrunt/issues/1211

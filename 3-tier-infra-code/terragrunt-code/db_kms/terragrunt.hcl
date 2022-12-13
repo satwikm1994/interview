@@ -8,7 +8,7 @@ terraform {
 # These are the variables we have to pass in to use the module specified in the terragrunt configuration above
 # KMS variables
 inputs = {
-  alias_name              = "alias/musca-db-key"
+  alias_name              = "alias/interview-db-key"
   deletion_window_in_days = "7" #..> days
   description             = "KMS key for RDS"
   enable_key_rotation     = true

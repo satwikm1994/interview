@@ -1,7 +1,3 @@
-terraform {
-  backend "gcs" {}
-}
-
 locals {
   password = random_password.master_password[0].result
 }

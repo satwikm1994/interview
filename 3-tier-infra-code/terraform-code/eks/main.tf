@@ -1,7 +1,3 @@
-terraform {
-  backend "gcs" {}
-}
-
 data "aws_vpc" "vpc" {
   tags = {
     Name = var.vpc_name
@@ -140,64 +136,3 @@ resource "aws_security_group_rule" "allow_rds_database_port" {
   to_port           = 5432
   type              = "ingress"
 }
-
-
-#resource "aws_security_group_rule" "allow_8080_master" {
-#  description              = "Allow 8080 from eks Master public/private"
-#  protocol                 = "tcp"
-#  security_group_id        = aws_security_group.cluster.id
-#  cidr_blocks              = var.vpc_cidr
-#  from_port                = 8080
-#  to_port                  = 8080
-#  type                     = "ingress"
-#}
-#
-#resource "aws_security_group_rule" "allow_health_checks" {
-#  description              = "Allow Health Check traffic to public/private subnet"
-#  protocol                 = "-1"
-#  security_group_id        = aws_security_group.cluster.id
-#  cidr_blocks              = ["35.191.0.0/16", "209.85.152.0/22", "209.85.204.0/22", "130.211.0.0/22"]
-#  from_port                = 0
-#  to_port                  = 0
-#  type                     = "ingress"
-#}
-#
-#resource "aws_security_group_rule" "allow_gcp_l7_lb" {
-#  description              = "Allow traffic to external subnet"
-#  protocol                 = "tcp"
-#  security_group_id        = aws_security_group.cluster.id
-#  cidr_blocks              = ["130.211.0.0/22", "35.191.0.0/16"]
-#  from_port                = ["30000-32767", "8443", "8877", "8080"]
-#  to_port                  = ["30000-32767", "8443", "8877", "8080"]
-#  type                     = "ingress"
-#}
-#
-#resource "aws_security_group_rule" "allow_internet" {
-#  description              = "Allow Internet traffic to external subnet"
-#  protocol                 = "tcp"
-#  security_group_id        = aws_security_group.cluster.id
-#  cidr_blocks              = ["0.0.0.0/0"]
-#  from_port                = ["80", "443"]
-#  to_port                  = ["80", "443"]
-#  type                     = "ingress"
-#}
-#
-#resource "aws_security_group_rule" "allow_gke_to_linkerd" {
-#  description              = "Allow traffic on ports 8843, 8089 for linkerd control-plane components"
-#  protocol                 = "tcp"
-#  security_group_id        = aws_security_group.cluster.id
-#  cidr_blocks              = var.vpc_cidr
-#  from_port                = ["8089", "8443"]
-#  to_port                  = ["8089", "8443"]
-#  type                     = "ingress"
-#}
-#
-#resource "aws_security_group_rule" "allow_external" {
-#  description              = "Allow traffic from public subnet to private subnet"
-#  protocol                 = "tcp"
-#  security_group_id        = aws_security_group.cluster.id
-#  cidr_blocks              = var.public_cidr_ranges
-#  from_port                = ["80", "5672"]
-#  to_port                  = ["80", "5672"]
-#  type                     = "ingress"
-#}
