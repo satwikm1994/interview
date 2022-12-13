@@ -17,7 +17,7 @@ resource "aws_iam_role" "iam_role" {
   managed_policy_arns = var.managed_policy_arns
 }
 
-resource "aws_iam_instance_profile" "idfy_profile" {
+resource "aws_iam_instance_profile" "interview_profile" {
   name = var.instance_profile_name
   role = aws_iam_role.iam_role.name
 }

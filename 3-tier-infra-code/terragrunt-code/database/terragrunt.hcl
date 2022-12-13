@@ -1,6 +1,5 @@
 terraform {
-  source = "git::https://gitlab.idfy.com/code/infra/terraform-modules-aws.git//RDS?ref=master_v2"
-  #source = "E:/terraform/terraform-modules-aws/RDS"
+  source = ""
 }
 
 # These are the variables we have to pass in to use the module specified in the terragrunt configuration above

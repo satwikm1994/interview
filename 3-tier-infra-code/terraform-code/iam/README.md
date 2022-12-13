@@ -25,7 +25,7 @@ No modules.
 | Name | Type |
 |------|------|
 | [aws_iam_role.Packer_ec2_roles](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_policy) | resource |
-| [aws_iam_instance_profile.idfy_profile](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_policy) | resource |
+| [aws_iam_instance_profile.interview_profile](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_policy) | resource |
 ## Inputs
 
 | Name | Description | Type | Default | Required |

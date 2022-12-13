@@ -5,11 +5,11 @@
 # Terragrunt will copy the Terraform configurations specified by the source parameter, along with any files in the
 # working directory, into a temporary folder, and execute your Terraform commands in that folder.
 terraform {
-  source = "git::https://gitlab.idfy.com/code/infra/terraform-modules-aws.git//eks?ref=master_v2"
+  source = ""
 }
 
 locals {
-  universe_name = "musca"
+  universe_name = "interview"
 }
 
 # These are the variables we have to pass in to use the module specified in the terragrunt configuration above
@@ -32,7 +32,7 @@ inputs = {
     "10.70.199.0/24",
     "10.70.200.0/24"
   ]
-  context = "nodes" #..> musca nodes subnet
+  context = "nodes" #..> interview nodes subnet
   node_group = {
     "node_group_1" = {
       node_group_name = "${local.universe_name}-cluster-group"

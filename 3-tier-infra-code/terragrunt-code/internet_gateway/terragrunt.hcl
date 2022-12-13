@@ -1,6 +1,5 @@
 terraform {
-  source = "git::https://gitlab.idfy.com/code/infra/terraform-modules-aws.git//internet-gateway?ref=master_v2"
-  #source = "D:/aws-terraform/aws-modules/terraform-modules-aws/internet-gateway"
+  source = ""
 }
 
 inputs = {

@@ -1,5 +1,5 @@
 terraform {
-  source = "git::https://gitlab.idfy.com/code/infra/terraform-modules-aws.git//subnets?ref=master_v2"
+  source = ""
 }
 
 inputs = {

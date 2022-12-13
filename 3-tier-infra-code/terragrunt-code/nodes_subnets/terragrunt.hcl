@@ -1,6 +1,5 @@
 terraform {
-  source = "git::https://gitlab.idfy.com/code/infra/terraform-modules-aws.git//subnets?ref=master_v2"
-  #source = "D:/aws-terraform/aws-modules/terraform-modules-aws/subnets"
+  source = ""
 }
 
 inputs = {
@@ -8,7 +7,7 @@ inputs = {
   az_count = 3
   cidr_ids = ["10.70.198.0/24", "10.70.199.0/24", "10.70.200.0/24"]
   additional_tags = {
-    "kubernetes.io/cluster/musca-cluster" = "owned"
+    "kubernetes.io/cluster/interview-cluster" = "owned"
     "kubernetes.io/role/internal-elb"     = "1"
   } #..> for private subnet
 }

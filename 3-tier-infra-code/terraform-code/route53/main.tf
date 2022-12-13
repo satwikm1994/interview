@@ -54,7 +54,7 @@ resource "aws_route53_zone_association" "vpcs" {
   vpc_id  = data.aws_vpc.vpc_list[count.index].id
 }
 
-resource "aws_route53_record" "idfy-records" {
+resource "aws_route53_record" "interview-records" {
   for_each = var.create ? local.recordsets : tomap({})
 
   zone_id = aws_route53_zone.primary_vpc.zone_id

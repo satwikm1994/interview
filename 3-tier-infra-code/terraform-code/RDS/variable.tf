@@ -6,7 +6,7 @@ variable "rds_instance_role_name" {
 variable "db_instance_name" {
   description = "The name of the RDS instance, if omitted, Terraform will assign a random, unique identifier"
   type        = string
-  default     = "idfy-db"
+  default     = "interview-db"
 }
 
 variable "engine" {
@@ -58,7 +58,7 @@ variable "iam_database_authentication_enabled" {
 variable "db_subnet_group_name" {
   description = "Name of DB subnet group. DB instance will be created in the VPC associated with the DB subnet group. If unspecified, will be created in the default VPC"
   type        = string
-  default     = "idfy-subnetgroup"
+  default     = "interview-subnetgroup"
 }
 
 variable "availability_zone" {

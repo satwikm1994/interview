@@ -1,6 +1,6 @@
 
 terraform {
-  source = "git::https://gitlab.idfy.com/code/infra/terraform-modules-aws.git//vpc?ref=master_v2"
+  source = ""
 }
 
 include {

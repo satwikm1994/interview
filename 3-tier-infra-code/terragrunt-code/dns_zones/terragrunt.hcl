@@ -1,7 +1,7 @@
 # Terragrunt will copy the Terraform configurations specified by the source parameter, along with any files in the
 # working directory, into a temporary folder, and execute your Terraform commands in that folder.
 terraform {
-  source = "git::https://gitlab.idfy.com/code/infra/terraform-modules-aws.git//route53?ref=master_v2"
+  source = ""
 }
 
 # These are the variables we have to pass in to use the module specified in the terragrunt configuration above
@@ -12,7 +12,7 @@ locals {
   universe_name = local.myvars.locals.universe_name
 }
 inputs = {
-  vpc_name_list = ["norma-vpc"]
+  vpc_name_list = ["interview-vpc"]
   aws_route53_zone_name = "${local.universe_name}.internal"
   create                = true
   records = [
